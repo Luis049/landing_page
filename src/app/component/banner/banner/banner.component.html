@@ -1,0 +1,49 @@
+<div *ngIf=" images &&  images.length > 0" class="relative m-auto text-center w-[700px] rounded-[15px] shadow-md">
+
+  <img class="hidden rounded-[15px]" *ngFor="let image of  images; let i=index" [src]="image.imageSrc"
+    [alt]="image.imageAlt" [ngClass]="{'image-active': selectedIndex === i}">
+
+
+  <div *ngIf="indicators" class="absolute right-0 left-0 bottom-0 flex justify-center p-0 pb-4">
+    <span *ngFor="let dot of images; let i=index"
+      class="cursor-pointer h-[13px] w-[13px] my-0 mx-5 bg-white rounded-[50%] inline-block transition-opacity duration-600 ease opacity-35"
+      [ngClass]="{'active': selectedIndex === i}" (click)="selectedImagen(i)">
+      <i class="dot active:opacity-10 hover:opacity-10"></i>
+    </span>
+  </div>
+
+  <button *ngIf="controls" class="absolute left-0 top-0 bottom-0 flex items-center justify-center
+          w-[15%] p-0 text-center bg-transparent bg-[0 0] border-0 cursor-pointer">
+    <i class="fa-solid fa-arrow-left text-white transition-opacity duration-300
+          ease-in-out hover:opacity-10 active:opacity-10 size-[35px]" (click)="onLeftClick()"></i>
+  </button>
+  <button *ngIf="controls" class="absolute right-0 top-0 bottom-0 flex items-center justify-center
+          w-[15%] p-0 text-center bg-transparent bg-[0 0] border-0 cursor-pointer">
+    <i class="fa-solid fa-arrow-right text-white transition-opacity duration-300 ease-in-out
+          hover:opacity-0.9 active:opacity-10 size-[35px]" (click)="onRightClick()">
+    </i>
+  </button>
+</div>
+
+
+
+
+<!-- <div class="dsc-carousel">
+  <div class="dsc-carousel__btns">
+    <i class="fa fa-chevron-circle-left"></i>
+    <i class="fa fa-chevron-circle-right"></i>
+  </div>
+  <div class="dsc-carousel__content">
+    <ng-container>
+      <div class="das-carousel__content-item">
+        <h1></h1>
+        <p></p>
+      </div>
+    </ng-container>
+  </div>
+  <div class="dsc-carousel__step">
+    <div class="dcs-carousel__steps-step">
+
+    </div>
+  </div>
+</div> -->
