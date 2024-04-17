@@ -1,12 +1,11 @@
-<div *ngIf=" images &&  images.length > 0" class="relative m-auto text-center w-[700px] rounded-[15px] shadow-md">
-
-  <img class="hidden rounded-[15px]" *ngFor="let image of  images; let i=index" [src]="image.imageSrc"
+<div *ngIf=" images &&  images.length > 0" class="relative w-[100%] shadow-md">
+  <img class="hidden bg-cover" *ngFor="let image of  images; let i=index" [src]="image.imageSrc"
     [alt]="image.imageAlt" [ngClass]="{'image-active': selectedIndex === i}">
 
 
   <div *ngIf="indicators" class="absolute right-0 left-0 bottom-0 flex justify-center p-0 pb-4">
     <span *ngFor="let dot of images; let i=index"
-      class="cursor-pointer h-[13px] w-[13px] my-0 mx-5 bg-white rounded-[50%] inline-block transition-opacity duration-600 ease opacity-35"
+      class="cursor-pointer h-[13px] w-[13px] my-0 mx-5 bg-cover bg-white rounded-[50%] inline-block transition-opacity duration-600 ease opacity-35"
       [ngClass]="{'active': selectedIndex === i}" (click)="selectedImagen(i)">
       <i class="dot active:opacity-10 hover:opacity-10"></i>
     </span>

@@ -8,6 +8,7 @@ import { CarouselItem } from '../../../data/interfaces/carousel-interfaces';
 })
 export class BannerComponent implements OnInit {
 
+
   @Input() images: CarouselItem[] = [];
   @Input() indicators = true;
   @Input() controls = true;
